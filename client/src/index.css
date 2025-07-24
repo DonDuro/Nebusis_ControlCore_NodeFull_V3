@@ -1,0 +1,417 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Nebusis® Universal UI Design Specification Colors */
+  --nebusis-blue: #005FAD;
+  --nebusis-slate-gray: #4A4A4A;
+  --nebusis-electric-sky: #00C2FF;
+  --nebusis-white: #FFFFFF;
+  --nebusis-midnight-charcoal: #121212;
+  --nebusis-light-surface: #F5F5F5;
+  --nebusis-soft-gray: #D1D1D1;
+  --nebusis-emerald-green: #28A745;
+  --nebusis-alert-red: #D9534F;
+  --nebusis-hover-blue: #00407A;
+  
+  /* Theme Variables */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(216, 13%, 9%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(216, 13%, 9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(216, 13%, 9%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(210, 100%, 34%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(215, 25%, 27%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(215, 25%, 27%);
+  --destructive: hsl(0, 70%, 58%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(210, 100%, 34%);
+  --radius: 0.75rem;
+  
+  /* Nebusis Brand Colors */
+  --nebusis-primary: var(--nebusis-blue);
+  --nebusis-primary-hover: var(--nebusis-hover-blue);
+  --nebusis-secondary: var(--nebusis-slate-gray);
+  --nebusis-accent: var(--nebusis-electric-sky);
+  --nebusis-success: var(--nebusis-emerald-green);
+  --nebusis-error: var(--nebusis-alert-red);
+  --nebusis-surface: var(--nebusis-light-surface);
+  --nebusis-border: var(--nebusis-soft-gray);
+  
+  /* Sidebar colors */
+  --sidebar-background: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(216, 13%, 9%);
+  --sidebar-primary: hsl(210, 100%, 34%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(210, 40%, 96%);
+  --sidebar-accent-foreground: hsl(215, 25%, 27%);
+  --sidebar-border: hsl(214, 32%, 91%);
+  --sidebar-ring: hsl(210, 100%, 34%);
+  
+  /* Chart colors */
+  --chart-1: hsl(210, 100%, 34%);
+  --chart-2: hsl(134, 61%, 41%);
+  --chart-3: hsl(38, 92%, 50%);
+  --chart-4: hsl(0, 70%, 58%);
+  --chart-5: hsl(263, 70%, 50%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 7%);
+  --foreground: hsl(0, 0%, 88%);
+  --muted: hsl(0, 0%, 12%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --popover: hsl(0, 0%, 7%);
+  --popover-foreground: hsl(0, 0%, 88%);
+  --card: hsl(0, 0%, 12%);
+  --card-foreground: hsl(0, 0%, 88%);
+  --border: hsl(0, 0%, 19%);
+  --input: hsl(0, 0%, 19%);
+  --primary: hsl(210, 100%, 34%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 8%);
+  --secondary-foreground: hsl(0, 0%, 88%);
+  --accent: hsl(0, 0%, 19%);
+  --accent-foreground: hsl(0, 0%, 88%);
+  --destructive: hsl(0, 70%, 58%);
+  --destructive-foreground: hsl(0, 0%, 88%);
+  --ring: hsl(210, 100%, 34%);
+  
+  --sidebar-background: hsl(0, 0%, 7%);
+  --sidebar-foreground: hsl(0, 0%, 88%);
+  --sidebar-primary: hsl(210, 100%, 34%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(0, 0%, 19%);
+  --sidebar-accent-foreground: hsl(0, 0%, 88%);
+  --sidebar-border: hsl(0, 0%, 19%);
+  --sidebar-ring: hsl(210, 100%, 34%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  /* Responsive text scaling */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 1.25rem;
+    }
+    
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Nebusis® Universal UI Design Specification Utility Classes */
+@layer utilities {
+  /* Background Colors */
+  .bg-nebusis-blue {
+    background-color: var(--nebusis-blue);
+  }
+  
+  .bg-nebusis-blue-hover {
+    background-color: var(--nebusis-hover-blue);
+  }
+  
+  .bg-nebusis-slate {
+    background-color: var(--nebusis-slate-gray);
+  }
+  
+  .bg-nebusis-sky {
+    background-color: var(--nebusis-electric-sky);
+  }
+  
+  .bg-nebusis-surface {
+    background-color: var(--nebusis-light-surface);
+  }
+  
+  .bg-nebusis-success {
+    background-color: var(--nebusis-emerald-green);
+  }
+  
+  .bg-nebusis-error {
+    background-color: var(--nebusis-alert-red);
+  }
+
+  /* Text Colors */
+  .text-nebusis-blue {
+    color: var(--nebusis-blue);
+  }
+  
+  .text-nebusis-slate {
+    color: var(--nebusis-slate-gray);
+  }
+  
+  .text-nebusis-sky {
+    color: var(--nebusis-electric-sky);
+  }
+  
+  .text-nebusis-success {
+    color: var(--nebusis-emerald-green);
+  }
+  
+  .text-nebusis-error {
+    color: var(--nebusis-alert-red);
+  }
+
+  /* Border Colors */
+  .border-nebusis-blue {
+    border-color: var(--nebusis-blue);
+  }
+  
+  .border-nebusis-slate {
+    border-color: var(--nebusis-slate-gray);
+  }
+  
+  .border-nebusis-border {
+    border-color: var(--nebusis-soft-gray);
+  }
+
+  /* Hover States */
+  .hover\:bg-nebusis-blue:hover {
+    background-color: var(--nebusis-hover-blue);
+  }
+  
+  .hover\:text-nebusis-blue:hover {
+    color: var(--nebusis-blue);
+  }
+
+  /* Component Styles */
+  .nebusis-card {
+    background-color: var(--nebusis-white);
+    border-radius: 0.75rem;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid var(--nebusis-soft-gray);
+  }
+  
+  .nebusis-card-elevated {
+    background-color: var(--nebusis-white);
+    border-radius: 0.75rem;
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid var(--nebusis-soft-gray);
+  }
+  
+  .nebusis-button-primary {
+    background-color: var(--nebusis-blue);
+    color: var(--nebusis-white);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .nebusis-button-primary:hover {
+    background-color: var(--nebusis-hover-blue);
+  }
+  
+  .nebusis-button-secondary {
+    background-color: transparent;
+    color: var(--nebusis-blue);
+    border: 1px solid var(--nebusis-blue);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .nebusis-button-secondary:hover {
+    background-color: var(--nebusis-blue);
+    color: var(--nebusis-white);
+  }
+  
+  .nebusis-input {
+    border: 1px solid var(--nebusis-soft-gray);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+  }
+  
+  .nebusis-input:focus {
+    outline: none;
+    border-color: var(--nebusis-blue);
+    box-shadow: 0 0 0 2px rgba(0, 95, 173, 0.1);
+  }
+}
+
+/* Responsive Grid System - 12 Column Layout */
+@layer utilities {
+  .grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  
+  /* Mobile First - xs: 0px and up */
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
+  
+  /* Small - sm: 640px and up */
+  @media (min-width: 640px) {
+    .sm\:col-span-6 {
+      grid-column: span 6 / span 6;
+    }
+    
+    .sm\:col-span-4 {
+      grid-column: span 4 / span 4;
+    }
+    
+    .sm\:col-span-3 {
+      grid-column: span 3 / span 3;
+    }
+  }
+  
+  /* Medium - md: 768px and up */
+  @media (min-width: 768px) {
+    .md\:col-span-6 {
+      grid-column: span 6 / span 6;
+    }
+    
+    .md\:col-span-4 {
+      grid-column: span 4 / span 4;
+    }
+    
+    .md\:col-span-3 {
+      grid-column: span 3 / span 3;
+    }
+  }
+  
+  /* Large - lg: 1024px and up */
+  @media (min-width: 1024px) {
+    .lg\:col-span-6 {
+      grid-column: span 6 / span 6;
+    }
+    
+    .lg\:col-span-4 {
+      grid-column: span 4 / span 4;
+    }
+    
+    .lg\:col-span-3 {
+      grid-column: span 3 / span 3;
+    }
+  }
+  
+  /* Extra Large - xl: 1280px and up */
+  @media (min-width: 1280px) {
+    .xl\:col-span-6 {
+      grid-column: span 6 / span 6;
+    }
+    
+    .xl\:col-span-4 {
+      grid-column: span 4 / span 4;
+    }
+    
+    .xl\:col-span-3 {
+      grid-column: span 3 / span 3;
+    }
+  }
+}
+
+/* Touch-friendly controls for mobile */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .touch-button {
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .touch-button {
+      font-size: 1.125rem;
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+
+/* Legacy DR colors for backward compatibility */
+.bg-dr-blue {
+  background-color: var(--nebusis-blue);
+}
+
+.bg-dr-light-blue {
+  background-color: var(--nebusis-electric-sky);
+}
+
+.bg-dr-success {
+  background-color: var(--nebusis-emerald-green);
+}
+
+.bg-dr-error {
+  background-color: var(--nebusis-alert-red);
+}
+
+.bg-dr-surface {
+  background-color: var(--nebusis-light-surface);
+}
+
+.text-dr-blue {
+  color: var(--nebusis-blue);
+}
+
+.text-dr-neutral {
+  color: var(--nebusis-slate-gray);
+}
+
+.hover\:bg-dr-blue:hover {
+  background-color: var(--nebusis-hover-blue);
+}
+
+.hover\:text-dr-blue:hover {
+  color: var(--nebusis-blue);
+}
